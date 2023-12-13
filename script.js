@@ -97,6 +97,9 @@ function pauseRandom(){
     randomIcon.classList.remove('randomActive');
 }
 function repeatTrack(){
+    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+    wave.classList.remove('loader');
+    track_art.classList.remove('rotate');
     let current_index = track_index;
     loadTrack(current_index);
     playTrack();
@@ -122,6 +125,9 @@ function pauseTrack(){
 
 }
 function nextTrack(){
+    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+    wave.classList.remove('loader');
+    track_art.classList.remove('rotate');
     if(track_index < music_list.length - 1 && isRandom === false){
         track_index += 1;
     }else if(track_index < music_list.length - 1 && isRandom === true){
@@ -134,6 +140,9 @@ function nextTrack(){
     playTrack();
 }
 function prevTrack(){
+    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+    wave.classList.remove('loader');
+    track_art.classList.remove('rotate');
     if(track_index > 0){
         track_index -= 1;
     }else{
