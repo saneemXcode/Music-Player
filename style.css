@@ -4,7 +4,7 @@ body {
     font-weight: bold;
     }    
     .player{
-      height: 95vh;
+      height: auto;
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -157,15 +157,16 @@ body {
         }
     }
     .loader {
-      height: 50px;
+      height: 45px;
       display: flex;
+      margin-block: 10px;
       justify-content: center;
       align-items: center;
     }
     .loader .stroke{
         background: #f1f1f1;
-        height: 150%;
-        width: 10px;
+        height: 140%;
+        width: 9px;
         border-radius: 50px;
         margin: 0 5px;
         animation: animate 1.4s linear infinite;
@@ -225,6 +226,7 @@ body {
         width: 175px;
       }
       .player{
+        height: 95vh;
          margin-top: -15px;
       }
       .fa-random.fa-2x {
