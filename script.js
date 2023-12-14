@@ -78,7 +78,6 @@ function random_bg_color(){
 
     let gradient = 'linear-gradient(' + angle + ',' + Color1 + ', ' + Color2 + ")";
     document.body.style.background = gradient;
-    document.wrapper.style.background =gradient;
 }
 function reset(){
     curr_time.textContent = "00:00";
@@ -97,10 +96,6 @@ function pauseRandom(){
     randomIcon.classList.remove('randomActive');
 }
 function repeatTrack(){
-    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
-    wave.classList.remove('loader');
-    track_art.classList.remove('rotate');
-    randomIcon.classList.remove('randomActive');
     let current_index = track_index;
     loadTrack(current_index);
     playTrack();
@@ -113,23 +108,18 @@ function playTrack(){
     isPlaying = true;
     track_art.classList.add('rotate');
     wave.classList.add('loader');
-    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
     randomIcon.classList.add('randomActive');
+    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
 }
 function pauseTrack(){
     curr_track.pause();
     isPlaying = false;
     track_art.classList.remove('rotate');
     wave.classList.remove('loader');
-    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
     randomIcon.classList.remove('randomActive');
-
+    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
 }
 function nextTrack(){
-    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
-    wave.classList.remove('loader');
-    track_art.classList.remove('rotate');
-    randomIcon.classList.remove('randomActive');
     if(track_index < music_list.length - 1 && isRandom === false){
         track_index += 1;
     }else if(track_index < music_list.length - 1 && isRandom === true){
@@ -142,10 +132,6 @@ function nextTrack(){
     playTrack();
 }
 function prevTrack(){
-    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
-    wave.classList.remove('loader');
-    track_art.classList.remove('rotate');
-    randomIcon.classList.remove('randomActive');
     if(track_index > 0){
         track_index -= 1;
     }else{
